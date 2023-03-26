@@ -44,8 +44,7 @@ There is an ominous feeling in the air. Be careful!
 ''']
 
 word_list = ["cat", "dog", "cow", "monkey", "bird", "bear"]
-secret_word = list(random.choice(word_list)) 
-print(secret_word) #use for testing, then delete
+secret_word = random.choice(word_list)
 
 lives = 5 
 #To add "_" for every letter in chosen_word
@@ -53,12 +52,12 @@ display = []
 word_length = len(secret_word)
 for letter in range(word_length):
     display += "_"
-print(display)
 print(stage_strings[5])
+print(f"{' ' .join(display)} \n")
 
 #Use while loop to run code until all letters have been guessed
 while "_" in display: 
-    guess = input("Guess a letter: \n").lower()
+    guess = input("Guess a letter: \n").lower() 
     #Reduce lives by 1 each time an incorrect word is guessed
     if guess not in secret_word:  
         lives -= 1 
@@ -70,11 +69,11 @@ while "_" in display:
         #Reveals the letter in the correct position 
         if letter == guess:
             display[position] = letter 
-            print(display)
+    print(f" \n{' ' .join(display)} \n")
     #When all letters have been guessed, print "You won!" and break the while loop
     if "_" not in display: 
-        print("You won!")
+        print("You win! You are safe from Slender Man...for now.")
         break 
     elif lives == 0: 
-        print("You lose")
+        print("You lose.")
         break 
