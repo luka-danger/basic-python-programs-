@@ -1,5 +1,10 @@
 import random
 
+logo = '''
+
+'''
+print(logo)
+
 stages = ['''
    O
   /|\ 
@@ -54,18 +59,19 @@ print(stage_strings[5])
 #Use while loop to run code until all letters have been guessed
 while "_" in display: 
     guess = input("Guess a letter: \n").lower()
-    if letter != guess: 
+    #Reduce lives by 1 each time an incorrect word is guessed
+    if guess not in secret_word:  
         lives -= 1 
         print(stages[lives]) 
         print(stage_strings[lives])
-#Replace "_" with letter if guess matches letter in chosen_word 
+    #Replace "_" with letter if guess matches letter in chosen_word 
     for position in range(word_length): 
         letter = secret_word[position]   
-#Reveals the letter in the correct position 
+        #Reveals the letter in the correct position 
         if letter == guess:
             display[position] = letter 
             print(display)
-#When all letters have been guessed, print "You won!" and break the while loop
+    #When all letters have been guessed, print "You won!" and break the while loop
     if "_" not in display: 
         print("You won!")
         break 
