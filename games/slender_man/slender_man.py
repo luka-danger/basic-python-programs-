@@ -29,6 +29,12 @@ stages = ['''
    O
   /|\ 
  / | \ 
+  /  
+ /   
+ ''', '''
+   O
+  /|\ 
+ / | \ 
 ''','''
    O
   /|
@@ -45,6 +51,8 @@ stages = ['''
 
 stage_strings = ['''
 Slender Man has caught you. There is no escape.
+''', '''
+Time is running out. He's almost here.
 ''', '''
 Slender Man is getting closer... 
 ''','''
