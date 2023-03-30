@@ -46,7 +46,6 @@ stages = ['''
 ''', '''
    O
 ''', '''
-
 ''']
 
 stage_strings = ['''
@@ -54,7 +53,7 @@ Slender Man has caught you. There is no escape.
 ''', '''
 Time is running out. He's almost here.
 ''', '''
-Slender Man is getting closer... 
+It's almost too late. Get out of the house now!
 ''','''
 Slender Man is getting closer... 
 ''','''
@@ -68,13 +67,14 @@ There is an ominous feeling in the air...
 import word_list
 secret_word = random.choice(word_list.words)
 
-lives = 5 
+lives = 6
 #To add "_" for every letter in chosen_word
 display = []
 word_length = len(secret_word)
 for letter in range(word_length):
     display += "_"
-print(stage_strings[5])
+print(stages[lives])
+print(stage_strings[lives])
 print(f"{' ' .join(display)} \n")
 
 #Use while loop to run code until all letters have been guessed
