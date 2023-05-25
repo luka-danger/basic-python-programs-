@@ -1,6 +1,8 @@
+# This solution doesn't need the math module
+# Might need it for a better solution, so keeping so I don't forget
 import math
 
-num = int(input("Enter number: "))
+num = int(input("Enter number: \n"))
 
 # Any number less than 2 is not prime
 if num < 2:
