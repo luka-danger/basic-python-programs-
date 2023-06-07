@@ -5,13 +5,14 @@
 # (H * W) / 5 = Number of cans of paint
 # Round up paint cans 
 
-
+def paint_calc():
+    area = (height * width) / 5
+    print(f'You need {area} cans of paint.')
 
 #Write your code above this line 👆
 # Define a function called paint_calc() so that the code below works.   
 
 # 🚨 Don't change the code below 👇
-test_h = int(input("Height of wall: "))
-test_w = int(input("Width of wall: "))
-coverage = 5
-paint_calc(height=test_h, width=test_w, cover=coverage)
+height = int(input("Height of wall: "))
+width = int(input("Width of wall: "))
+paint_calc()
