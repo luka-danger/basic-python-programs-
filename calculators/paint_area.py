@@ -6,13 +6,9 @@
 # Round up paint cans 
 
 def paint_calc():
-    area = (height * width) / 5
-    print(f'You need {area} cans of paint.')
+    paintCans = (height * width) / 5
+    print(f'You need {paintCans} cans of paint.') 
 
-#Write your code above this line 👆
-# Define a function called paint_calc() so that the code below works.   
-
-# 🚨 Don't change the code below 👇
 height = int(input("Height of wall: "))
 width = int(input("Width of wall: "))
 paint_calc()
