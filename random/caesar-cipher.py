@@ -10,10 +10,12 @@ def encrypt():
     for letter in text: 
      position = alphabet.index(letter)
      newPosition = position + shift 
-     newLetter = alphabet[newPosition]
-     cipherText += newLetter
      if newPosition > 26:
         newLetter = alphabet[0 + shift]
+        cipherText += newLetter
+     else:
+       newLetter = alphabet[newPosition]
+       cipherText += newLetter
     print(f'The encoded output is {cipherText}')
 
 # There is a bug in the code. encrypyt() works, but if it reaches a letter past 
