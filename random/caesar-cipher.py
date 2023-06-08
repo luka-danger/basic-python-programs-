@@ -11,7 +11,8 @@ def encrypt():
      position = alphabet.index(letter)
      newPosition = position + shift 
      if newPosition > 26:
-        newLetter = alphabet[position - shift]
+        alphabet.extend(alphabet)
+        newLetter = alphabet[newPosition]
         cipherText += newLetter
      else:
        newLetter = alphabet[newPosition]
