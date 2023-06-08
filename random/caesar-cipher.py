@@ -7,27 +7,17 @@ shift = int(input("Type the shift number:\n"))
 
 def encrypt():
     cipherText = ""
-    for letter in text: 
-     position = alphabet.index(letter)
-     newPosition = position + shift 
-     if newPosition > 26:
-        alphabet.extend(alphabet)
-        newLetter = alphabet[newPosition]
-        cipherText += newLetter
-     else:
-       newLetter = alphabet[newPosition]
-       cipherText += newLetter
+    # Iterate through each letter in the text
+    for letter in text:
+        if letter in alphabet:
+           position = alphabet.index(letter)
+           # Position + Shift establishes new position 
+           # Modulus keeps the range within 26 
+           newPosition = (position + shift) % 26 
+           newLetter = alphabet[newPosition]
+           # Add newLetter to empty cipherText string
+           # with each iteration of the for loop 
+           cipherText += newLetter
     print(f'The encoded output is {cipherText}')
 
-# There is a bug in the code. encrypyt() works, but if it reaches a letter past 
-# 'z', rather than starting over and iterating through the alphabet again, 
-# it breaks and throws an out of range error 
-    
 encrypt()
-
-
-    ##HINT: How do you get the index of an item in a list:
-    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
-
-#TODO-3: Call the encrypt function and pass in the user inputs. 
-# You should be able to test the code and encrypt a message. 
