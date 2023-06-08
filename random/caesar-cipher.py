@@ -26,17 +26,16 @@ def decrypt():
             decipherText += originalLetter
     print(f'The decoded output is {decipherText}')
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-
-
-if direction == "encode":
-    text = input("Type your message:\n").lower()
-    shift = int(input("Type the shift number:\n"))
-    encrypt()
-elif direction == "decode":
-    text = input("Enter a message to decode:\n").lower()
-    shift = int(input("Type the shift number:\n"))
-    decrypt()
-else:
-    print("Please enter a valid input.")
+while True: 
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    if direction == "encode":
+        text = input("Type your message:\n").lower()
+        shift = int(input("Type the shift number:\n"))
+        encrypt()
+    elif direction == "decode":
+        text = input("Enter a message to decode:\n").lower()
+        shift = int(input("Type the shift number:\n"))
+        decrypt()
+    else:
+        print("Please enter a valid input.")
 
