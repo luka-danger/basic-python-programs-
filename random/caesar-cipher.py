@@ -1,10 +1,6 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 
 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
 def encrypt():
     cipherText = ""
     # Iterate through each letter in the text
@@ -30,4 +26,14 @@ def decrypt():
             decipherText += originalLetter
     print(f'The decoded output is {decipherText}')
 
-decrypt()
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+if direction == "encode":
+    encrypt()
+elif direction == "decode":
+    decrypt()
+else:
+    print("Please enter a valid input.")
+
