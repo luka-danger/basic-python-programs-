@@ -12,6 +12,8 @@ def encrypt():
      newPosition = position + shift 
      newLetter = alphabet[newPosition]
      cipherText += newLetter
+     if newPosition > 26:
+        newLetter = alphabet[0 + shift]
     print(f'The encoded output is {cipherText}')
 
 # There is a bug in the code. encrypyt() works, but if it reaches a letter past 
@@ -20,10 +22,6 @@ def encrypt():
     
 encrypt()
 
-
-
-
-  
 
     ##HINT: How do you get the index of an item in a list:
     #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
