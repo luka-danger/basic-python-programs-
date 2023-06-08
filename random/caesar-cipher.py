@@ -12,7 +12,7 @@ def encrypt():
      newPosition = position + shift 
      newLetter = alphabet[newPosition]
      cipherText += newLetter
-    print(cipherText)
+    print(f'The encoded output is {cipherText}')
     
 encrypt()
 
