@@ -20,4 +20,14 @@ def encrypt():
            cipherText += newLetter
     print(f'The encoded output is {cipherText}')
 
-encrypt()
+def decrypt():
+    decipherText = ""
+    for letter in text:
+        if letter in text: 
+            position = alphabet.index(letter)
+            originalPosition = (position - shift) % 26
+            originalLetter = alphabet[originalPosition]
+            decipherText += originalLetter
+    print(f'The decoded output is {decipherText}')
+
+decrypt()
