@@ -44,7 +44,7 @@ def caesar():
                 originalPosition = (position - shift) % 26
                 originalLetter = alphabet[originalPosition]
                 cipherText += originalLetter
-            print(f'Decode Output: {cipherText}')
+    print(f'The {direction}d output is: {cipherText}')
 
 while True: 
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
