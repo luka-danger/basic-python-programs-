@@ -1,5 +1,6 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 
-'m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+'m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2'
+,'3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '$', '?', ' ', '#', '*', '%']
 
 def encrypt():
     cipherText = ""
@@ -9,7 +10,7 @@ def encrypt():
            position = alphabet.index(letter)
            # Position + Shift establishes new position 
            # Modulus keeps the range within 26 
-           newPosition = (position + shift) % 26 
+           newPosition = (position + shift) % 44 
            newLetter = alphabet[newPosition]
            # Add newLetter to empty cipherText string
            # with each iteration of the for loop 
@@ -21,7 +22,7 @@ def decrypt():
     for letter in text:
         if letter in text: 
             position = alphabet.index(letter)
-            originalPosition = (position - shift) % 26
+            originalPosition = (position - shift) % 44
             originalLetter = alphabet[originalPosition]
             decipherText += originalLetter
     print(f'The decoded output is {decipherText}\n')
