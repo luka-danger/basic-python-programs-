@@ -14,7 +14,7 @@ def encrypt():
            # Add newLetter to empty cipherText string
            # with each iteration of the for loop 
            cipherText += newLetter
-    print(f'The encoded output is {cipherText}')
+    print(f'The encoded output is {cipherText}\n')
 
 def decrypt():
     decipherText = ""
@@ -24,19 +24,26 @@ def decrypt():
             originalPosition = (position - shift) % 26
             originalLetter = alphabet[originalPosition]
             decipherText += originalLetter
-    print(f'The decoded output is {decipherText}')
+    print(f'The decoded output is {decipherText}\n')
 
 while True: 
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").casefold()
     if direction == "encode":
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
+        text = input("Type your message:\n").casefold()
+        try: 
+            shift = int(input("Type the shift number:\n"))
+        # Prevent code from breaking if a non-integer is entered 
+        except ValueError: 
+                print("Please enter an integer and try again.")
+                break
         encrypt()
     elif direction == "decode":
-        text = input("Enter a message to decode:\n").lower()
-        shift = int(input("Type the shift number:\n"))
+        text = input("Enter a message to decode:\n").casefold()
+        try: 
+            shift = int(input("Type the shift number:\n"))
+        except ValueError: 
+                print("Please enter an integer and try again.")
+                break
         decrypt()
     else:
-        print("Please enter a valid input.")
-
-print("hi")
+        print("Please enter a valid input.\n")
