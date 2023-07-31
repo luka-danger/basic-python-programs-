@@ -11,6 +11,10 @@ for score in student_scores:
     grade = student_scores[score]
     if grade >= 91:
         grade = "Outstanding"
-        print(grade)
-    else: 
-        print(grade)
+    elif grade >= 81 and grade <= 90: 
+        grade = "Exceeds Expectations"
+    elif grade >= 71 and grade <= 80:
+        grade = "Acceptable"
+    else:
+        grade = "Fail"
+    print(grade)
