@@ -22,7 +22,6 @@ while True:
     moreBidders = input("Are there anymore bidders? Yes or No: ")
     if moreBidders.lower() == "yes":
         secretAuction()
-        print(bidders)
     elif moreBidders.lower() == "no": 
         print("No more bidders")
         findMaxBid()
