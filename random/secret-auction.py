@@ -1,7 +1,10 @@
-bidders = {} 
+bidders = []
 
 def secretAuction():
-    bidderName = input("What is your name?: ")
-    bidAmount = input("What is your bid?: ")
+    newBid = {}
+    newBid["name"] = input("What is your name?: ")
+    newBid["bid_amount"] = input("What is your bid?: ")
+    bidders.append(newBid) 
 
 secretAuction()
+print(bidders)
