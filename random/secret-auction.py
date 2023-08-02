@@ -1,5 +1,3 @@
-from operator import itemgetter
-
 bidders = []
 
 def secretAuction():
@@ -9,8 +7,9 @@ def secretAuction():
     bidders.append(newBid) 
 
 def findMaxBid():
-    maxBid = max(map(itemgetter('bid_amount'), bidders)) 
-    print(f'The max bid is {maxBid} ')
+    maxBid = max(bid['bid_amount'] for bid in bidders) 
+    nameOfWinner = max(bidder['name'] for bidder in bidders) 
+    print(f'The winner is {nameOfWinner} with a bid of ${maxBid}!')
 
 secretAuction()
 while True:
