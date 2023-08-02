@@ -12,10 +12,13 @@ co14erTracker = [
       }
 ]
 
-def addPeak(): 
-    enterPeak = input("Enter a new peak: "); 
-    totalSummits = input("How many times have you climbed this peak?: "); 
-    enterRange = input("Which range is this peak in?: "); 
-    enterClass = input("What class ranking is this peak?: ")
-    
+def addPeak(peak, totalSummits, range, classRank): 
+    newPeak = {}
+    newPeak["peak"] = peak
+    newPeak["total_summits"] = totalSummits
+    newPeak["range"] = range
+    newPeak["class"] = classRank
 
+addPeak("Longs", 1, "Front", 3)
+
+print(co14erTracker)
