@@ -7,4 +7,11 @@ def secretAuction():
     bidders.append(newBid) 
 
 secretAuction()
-print(bidders)
+while True:
+    moreBidders = input("Are there anymore bidders? Yes or No: ")
+    if moreBidders == "Yes":
+        secretAuction()
+    else: 
+        print("No more bidders")
+        break 
+
