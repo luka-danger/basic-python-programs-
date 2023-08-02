@@ -9,9 +9,9 @@ def secretAuction():
 secretAuction()
 while True:
     moreBidders = input("Are there anymore bidders? Yes or No: ")
-    if moreBidders == "Yes":
+    if moreBidders.lower() == "yes":
         secretAuction()
-    elif moreBidders == "No": 
+    elif moreBidders.lower() == "no": 
         print("No more bidders")
         break 
     else:
