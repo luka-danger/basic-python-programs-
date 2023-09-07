@@ -16,11 +16,11 @@ def square_root(n1):
     return n1 * n1 
 
 calculator = {
-    add: "+", 
-    subtract: "-", 
-    multiply: "*", 
-    divide: "/", 
-    square_root: "^"
+    "+": add, 
+    "-": subtract, 
+    "*": multiply,
+    "/": divide, 
+    "^": square_root
     }
 
 
