@@ -18,14 +18,30 @@ operations = {
 }
 
 first_num = int(input("Enter first integer: ")) 
-second_num = int(input("Enter second integer: ")) 
 for symbol in operations: 
     print(symbol)
-operator = input("Choose an operator from the line above: ")
-# Remove any leading or trailing spaces in operator 
-operator = operator.strip()
-calc_function = operations[operator]
-answer = calc_function(first_num, second_num)
+should_continue = True 
+    
+while should_continue == True: 
+    operator = input("Choose an operator from the line above: ") 
+    # Remove any leading or trailing spaces in operator 
+    operator = operator.strip()
+    second_num = int(input("Enter second integer: ")) 
+    calc_function = operations[operator]
+    answer = calc_function(first_num, second_num)
+    print(f'{first_num} {operator} {second_num} = {answer}' )
+    
+    keep_calculating = input(f'''Type 'y' to continue calculating with {answer}, 
+    or type 'n' to exit: ''')
+    if keep_calculating == 'y': 
+        operator = input("Choose an operator from the line above: ") 
+        operator = operator.strip()
+        next_number = int(input("What's the next number?: "))
+        new_answer = calc_function(answer, next_number)
+    elif keep_calculating == 'n': 
+        should_continue = False 
 
-print(f'{first_num} {operator} {second_num} = {answer}' )
+          
+
+
     
