@@ -1,5 +1,4 @@
 from logo import logo 
-print(logo)
 
 def add(n1, n2):
     return n1 + n2
@@ -21,6 +20,7 @@ operations = {
 }
 
 def calculator(): 
+    print(logo) 
     first_num = int(input("Enter first integer: ")) 
     for symbol in operations: 
         print(symbol) 
