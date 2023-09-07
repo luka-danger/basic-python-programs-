@@ -15,5 +15,12 @@ def divide(n1, n2):
 def square_root(n1):
     return n1 * n1 
 
+calculator = {
+    add: "+", 
+    subtract: "-", 
+    multiply: "*", 
+    divide: "/", 
+    square_root: "^"
+    }
 
 
