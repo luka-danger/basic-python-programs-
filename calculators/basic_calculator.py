@@ -23,4 +23,9 @@ calculator = {
     "^": square_root
     }
 
-
+first_num = input("Enter first integer: ")
+second_num = input("Enter second integer: ")
+math_function = input("Choose an operator: ")
+for operator in calculator: 
+    new_function = operator(first_num, second_num)
+    print(new_function)
