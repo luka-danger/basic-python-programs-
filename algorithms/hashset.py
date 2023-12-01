@@ -4,6 +4,10 @@ hashset.add('spongebob')
 hashset.add('patrick')
 hashset.add('gary')
 hashset.add('squidward')
+hashset.add('gary')
 
 for name in hashset: 
-    print(name)
+   print(name)
+
+colors = set()
+print(type(colors))
