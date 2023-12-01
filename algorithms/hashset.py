@@ -7,5 +7,5 @@ hashset.add('squidward')
 
 print(hashset)
 
-hashset.remove('squidward')
+hashset.clear() 
 print(hashset)
