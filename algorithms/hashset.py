@@ -9,5 +9,6 @@ hashset.add('gary')
 for name in hashset: 
    print(name)
 
-colors = set()
-print(type(colors))
+# Create Dictionary 
+colors = {"Green":"broccoli","red":"tomato"}
+print(colors)
