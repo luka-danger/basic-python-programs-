@@ -5,7 +5,5 @@ hashset.add('patrick')
 hashset.add('gary')
 hashset.add('squidward')
 
-print(hashset)
-
-hashset.clear() 
-print(hashset)
+for name in hashset: 
+    print(name)
