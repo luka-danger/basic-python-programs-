@@ -23,3 +23,11 @@ n = 5
 apple = [1] * n
 print(apple)
 print(len(apple))
+
+# Sublists (slicing)
+bbb = [1, 2, 3, 4, 5]
+print(bbb[1:3])
+
+# Unpacking 
+a, b, c = [1, 2, 3]
+print(c)
