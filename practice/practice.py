@@ -12,4 +12,10 @@ for i in range(5):
 for i in range(5, 0, -1):
     print(i)
 
+# division 
+print(5 / 2)
+# division rounded down
+print(5 // 2)
+# division with negative numbers 
+print(-3 / 2)
 
