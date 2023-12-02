@@ -19,3 +19,10 @@ print(5 // 2)
 # division with negative numbers 
 print(-3 / 2)
 
+# Modulo 
+print(10 % 3)
+
+# Negative Value Mod
+import math
+print(math.fmod(-10, 3))
+
