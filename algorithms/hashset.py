@@ -8,8 +8,3 @@ hashset.add('gary')
 
 for name in hashset: 
    print(name)
-
-# Create Dictionary 
-colors = {"Green":"broccoli", "red":"tomato"}
-print(colors)
-print(colors['red'])
