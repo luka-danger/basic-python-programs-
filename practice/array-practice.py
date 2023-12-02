@@ -31,3 +31,14 @@ print(bbb[1:3])
 # Unpacking 
 a, b, c = [1, 2, 3]
 print(c)
+
+# Loop through arrays and add 
+# Expected output [1, 7, 2, 7, 3, 7]
+num = [1, 2, 3]
+new_num = [] 
+
+for i in num:
+    new_num.append(i)
+    new_num.append(7)
+
+print(new_num)
