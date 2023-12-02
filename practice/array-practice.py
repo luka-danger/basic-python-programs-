@@ -46,3 +46,18 @@ print(new_num)
 # Will provide index of each value in num
 for i, n in enumerate(num):
     print(i, n)
+
+# Loop through arrays w/ unpacking
+nums1= [1, 2, 3]
+nums2 = [4, 5, 6]
+for n1, n2 in zip(nums1, nums2):
+    print(n1, n2)
+
+# Reverse Array
+nums1.reverse()
+print(nums1)
+
+# Sort Array
+array1 = [6, 8, 19, 4, 2, 17]
+array1.sort()
+print(array1)
