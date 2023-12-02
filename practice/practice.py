@@ -32,3 +32,10 @@ print(math.ceil(3/2))
 print(math.sqrt(25))
 print(math.pow(2,3))
 
+float("inf")
+float("-inf")
+print(math.pow(2,200)) 
+print(math.pow(2,200) < float("inf"))
+
+
+
