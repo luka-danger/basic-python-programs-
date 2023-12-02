@@ -15,3 +15,11 @@ print(arr)
 # Remove last value 
 arr.pop()
 print(arr)
+
+arr[0] = 'hello'
+print(arr)
+
+n = 5
+apple = [1] * n
+print(apple)
+print(len(apple))
