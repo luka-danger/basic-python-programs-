@@ -26,3 +26,9 @@ print(10 % 3)
 import math
 print(math.fmod(-10, 3))
 
+# Math Helper 
+print(math.floor(3/2))
+print(math.ceil(3/2))
+print(math.sqrt(25))
+print(math.pow(2,3))
+
