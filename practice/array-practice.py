@@ -61,3 +61,6 @@ print(nums1)
 array1 = [6, 8, 19, 4, 2, 17]
 array1.sort()
 print(array1)
+# Sort Array in Reverse 
+array1.sort(reverse=True)
+print(array1)
