@@ -42,3 +42,7 @@ for i in num:
     new_num.append(7)
 
 print(new_num)
+
+# Will provide index of each value in num
+for i, n in enumerate(num):
+    print(i, n)
