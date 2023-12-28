@@ -7,18 +7,9 @@ user_cards = []
 computer_cards = []
 
 def deal_card():
-    user_cards.append(random.choice(cards), 2)
-    computer_cards.append(random.choice(cards))
-    print(user_cards)
-    print(computer_cards)
+    user_cards.append(random.choices(cards, k=2))
+    computer_cards.append(random.choices(cards, k=2))
+    print(f'Your cards: {user_cards}')
+    print(f'Computer cards: {computer_cards}')
     
-
-while True: 
-    start_game = input('Do you want to play blackjack? (y) or (n):\n') 
-    if start_game == 'y':
-        deal_card()
-    elif start_game == 'n':
-        print('Boring!')
-        break 
-    else:
-        print('Please enter valid option')
+deal_card()
