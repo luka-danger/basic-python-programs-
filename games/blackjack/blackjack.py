@@ -7,8 +7,10 @@ user_cards = []
 computer_cards = []
 
 def deal_card():
-    deal_card = random.choice(cards)
-    return deal_card
+    user_cards.append(random.choice(cards), 2)
+    computer_cards.append(random.choice(cards))
+    print(user_cards)
+    print(computer_cards)
     
 
 while True: 
