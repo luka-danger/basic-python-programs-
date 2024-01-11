@@ -75,15 +75,46 @@ class LinkedList:
             self.tail = None
         # Return item removed from linked list 
         return temp 
+    
+    # Return index of node 
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        temp = self.head
+        # No variable used in for loop, so use _
+        for _ in range(index):
+            temp = temp.next
+        return temp
+    
+    # Set is a keyword in Python, so need to call it set value
+    # Set value of node 
+    def set_value(self, index, value):
+        temp = self.get(index)
+        # if temp is not None
+        if temp: 
+            temp.value = value
+            return True
+        # bypass if statement with invalid index
+        return False
 
+
+# Create a linked list with node 2
 my_linked_list = LinkedList(2)
 
 # Add 3 to end of list
 my_linked_list.append(3)
 
+# Add 1 to beginning of list
 my_linked_list.prepend(1)
 
+# Get Node at index 2
+my_linked_list.get(2)
+
+# Set value of node 1 to value of 4
+my_linked_list.set_value(1, 4)
+
 my_linked_list.print_list()
+
 
 # Test cases for pop()
 '''
