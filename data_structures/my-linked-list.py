@@ -30,7 +30,8 @@ class LinkedList:
             self.tail.next = new_node
             self.tail = new_node
         # Increase length of linked list by 1
-        self.length += 1     
+        self.length += 1   
+        return True  
 
     def pop(self):
         if self.length == 0: 
@@ -61,6 +62,7 @@ class LinkedList:
             new_node.next = self.head
             self.head = new_node
         self.length += 1
+        return True
 
     def pop_first(self):
         if self.length == 0:
@@ -96,15 +98,29 @@ class LinkedList:
             return True
         # bypass if statement with invalid index
         return False
-
+    
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        new_node = Node(value)
+        temp = self.get(index - 1)
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length += 1
+        return True
+     
 
 # Create a linked list with node 2
 my_linked_list = LinkedList(2)
 
-# Add 3 to end of list
+# Add value to end of list
 my_linked_list.append(3)
 
-# Add 1 to beginning of list
+# Add value to beginning of list
 my_linked_list.prepend(1)
 
 # Get Node at index 2
@@ -113,9 +129,10 @@ my_linked_list.get(2)
 # Set value of node 1 to value of 4
 my_linked_list.set_value(1, 4)
 
+# Insert value 2 at index 1
+my_linked_list.insert(2, 3)
+
 my_linked_list.print_list()
-
-
 # Test cases for pop()
 '''
 # Test (2) Items - Returns 2 Node
