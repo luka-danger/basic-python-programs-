@@ -1,4 +1,5 @@
 from os import system
+from blackjack_ascii import logo
 import random
 
 def deal_card():
@@ -33,6 +34,8 @@ def compare(user_score, computer_score):
         return "You lose 😢"
 
 def play_game(): 
+    print(logo)
+
     user_cards = []
     computer_cards = []
     is_game_over = False
