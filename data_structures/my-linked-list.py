@@ -19,6 +19,23 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
-my_linked_list = LinkedList(4)
+# Append item to end of linked list
+    def append(self, value):
+        new_node = Node(value)
+        # Test to see if linked list is empty 
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node 
+        else: 
+            self.tail.next = new_node
+            self.tail = new_node
+        # Increase length of linked list by 1
+        self.length += 1     
 
-print(my_linked_list.head.value)
+my_linked_list = LinkedList(1)
+
+my_linked_list.append(2)
+
+my_linked_list.print_list()
+
+
