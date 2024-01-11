@@ -1,3 +1,4 @@
+from os import system
 import random
 
 def deal_card():
@@ -31,33 +32,38 @@ def compare(user_score, computer_score):
     else: 
         return "You lose 😢"
 
-user_cards = []
-computer_cards = []
-is_game_over = False
+def play_game(): 
+    user_cards = []
+    computer_cards = []
+    is_game_over = False
 
-for _ in range(2):
-    user_cards.append(deal_card())
-    computer_cards.append(deal_card())
-
-while not is_game_over: 
-    user_score = calculate_score(user_cards)
-    computer_score = calculate_score(computer_cards)
-    print(f'Your cards: {user_cards}, Your score: {user_score}')
-    print(f'Computer Card: {computer_cards[0]}')
-
-    if user_score == 0 or computer_score == 0 or user_score > 21:
-        is_game_over = True
-    else:
-        user_selection = input("Hit or stay? Type 'h' to get another card, type 's' to pass; \n")
-    if user_selection.casefold() == 'h':
+    for _ in range(2):
         user_cards.append(deal_card())
-    else:
-        is_game_over = True
+        computer_cards.append(deal_card())
 
-while computer_score != 0 and computer_score < 17:
-    computer_cards.append(deal_card())
-    computer_score = calculate_score(computer_cards)
+    while not is_game_over: 
+        user_score = calculate_score(user_cards)
+        computer_score = calculate_score(computer_cards)
+        print(f'Your cards: {user_cards}, Your score: {user_score}')
+        print(f'Computer Card: {computer_cards[0]}')
 
-print(f'Your final hand: {user_cards}, final score: {user_score}')
-print(f'Computer final hand: {computer_cards}, computer final score: {computer_score}')
-print(compare(user_score, computer_score))
+        if user_score == 0 or computer_score == 0 or user_score > 21:
+            is_game_over = True
+        else:
+            user_selection = input("Hit or stay? Type 'h' to get another card, type 's' to pass; \n")
+        if user_selection.casefold() == 'h':
+            user_cards.append(deal_card())
+        else:
+            is_game_over = True
+
+    while computer_score != 0 and computer_score < 17:
+        computer_cards.append(deal_card())
+        computer_score = calculate_score(computer_cards)
+
+    print(f'Your final hand: {user_cards}, final score: {user_score}')
+    print(f'Computer final hand: {computer_cards}, computer final score: {computer_score}')
+    print(compare(user_score, computer_score))
+
+while input("Do you want to play a game of Blackjack? Type 'y' or 'n': \n").casefold() == 'y':
+    system('clear')
+    play_game()
