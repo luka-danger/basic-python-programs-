@@ -62,14 +62,30 @@ class LinkedList:
             self.head = new_node
         self.length += 1
 
+    def pop_first(self):
+        if self.length == 0:
+            return None
+        # Use temp: head needs something pointing at it in order to remove
+        temp = self.head 
+        self.head = self.head.next 
+        temp.next = None
+        self.length -= 1
+        # Second if statement after decrementer, when starting with one item
+        if self.length == 0:
+            self.tail = None
+        # Return item removed from linked list 
+        return temp 
+
 my_linked_list = LinkedList(2)
 
+# Add 3 to end of list
 my_linked_list.append(3)
 
 my_linked_list.prepend(1)
 
 my_linked_list.print_list()
 
+# Test cases for pop()
 '''
 # Test (2) Items - Returns 2 Node
 print(my_linked_list.pop())
@@ -78,3 +94,14 @@ print(my_linked_list.pop())
 # Test (0) Items - Returns None
 print(my_linked_list.pop())
 '''
+
+# Test cases for pop_first()
+'''
+# Test (2) Items - Returns 2 Node
+print(my_linked_list.pop_first())
+# Test (1) Item - Returns 1 Node
+print(my_linked_list.pop_first())
+# Test (0) Items - Returns None
+print(my_linked_list.pop_first())
+'''
+
