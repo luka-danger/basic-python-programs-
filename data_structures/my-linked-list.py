@@ -113,6 +113,19 @@ class LinkedList:
         self.length += 1
         return True
      
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        prev = self.get(index - 1)
+        temp = prev.next
+        prev.next = temp.next 
+        temp.next = None 
+        self.length -= 1
+        return temp 
 
 # Create a linked list with node 2
 my_linked_list = LinkedList(2)
@@ -130,7 +143,9 @@ my_linked_list.get(2)
 my_linked_list.set_value(1, 4)
 
 # Insert value 2 at index 1
-my_linked_list.insert(2, 3)
+my_linked_list.insert(2, 2)
+
+my_linked_list.remove(1)
 
 my_linked_list.print_list()
 # Test cases for pop()
