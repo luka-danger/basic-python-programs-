@@ -31,5 +31,9 @@ print(f'Computer Card: {computer_cards}')
 
 if user_score == 0 or computer_score == 0 or user_score > 21:
     is_game_over = True
-
-    
+else:
+    user_selection = input("Hit or stay? Type 'h' to get another card, type 's' to pass; \n")
+    if user_selection.casefold == 'h':
+        user_cards.append(deal_card())
+    else:
+        is_game_over = True
