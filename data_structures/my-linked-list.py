@@ -127,6 +127,21 @@ class LinkedList:
         self.length -= 1
         return temp 
 
+    # 🚨 Common Coding Interview Question 🚨
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail 
+        self.tail = temp
+        # after variable prevents gaps in linked list 
+        after = temp.next 
+        before = None 
+        for _ in range(self.length):
+            # these steps must be in order to prevent gap 
+            after = temp.next
+            temp.next = before 
+            before = temp
+            temp = after
+
 # Create a linked list with node 2
 my_linked_list = LinkedList(2)
 
@@ -146,6 +161,8 @@ my_linked_list.set_value(1, 4)
 my_linked_list.insert(2, 2)
 
 my_linked_list.remove(1)
+
+my_linked_list.reverse()
 
 my_linked_list.print_list()
 # Test cases for pop()
