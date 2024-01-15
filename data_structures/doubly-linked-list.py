@@ -78,14 +78,36 @@ class DoublyLinkedList:
             temp.next = None 
         self.length -= 1
         return temp 
+    
+    def get(self, index):
+        # Return none when index out of range
+        if index < 0 or index >= self.length:
+            return None 
+        temp = self.head
+        # Start at head when index is in first half of list
+        if index < self.length / 2:
+            for _ in range(index):
+                temp = temp.next
+        # If index is in second half of list
+        else: 
+            # Set variable to tail
+            temp = self.tail
+            # Iterate through list backward, starting at tail and decrement
+            for _ in range(self.length - 1, index, -1):
+                # Move variable back by 1 
+                temp = temp.prev
+        return temp #.value <-- Use when testing get()
 
             
-my_doubly_linked_list = DoublyLinkedList(7)
-my_doubly_linked_list.append(8)
-my_doubly_linked_list.append(9)
-my_doubly_linked_list.append(10)
+my_doubly_linked_list = DoublyLinkedList(1)
+my_doubly_linked_list.append(2)
+my_doubly_linked_list.append(3)
+my_doubly_linked_list.append(4)
 my_doubly_linked_list.pop()
-my_doubly_linked_list.prepend(5)
+my_doubly_linked_list.prepend(0)
 my_doubly_linked_list.pop_first()
+
+# Use when testing get()
+# print(my_doubly_linked_list.get(1))
 
 my_doubly_linked_list.print_list()
