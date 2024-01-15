@@ -30,8 +30,32 @@ class DoublyLinkedList:
             new_node.prev = self.tail
             self.tail = new_node
         self.length += 1 
+        # Insert method requires boolean return 
         return True 
+    
+    def pop(self):
+        # If no items in linked list
+        if self.length == 0:
+            return None
+        # Set temp variable to tail 
+        temp = self.tail
+        # If 1 item in linked list 
+        if self.length == 1: 
+            self.head = None
+            self.tail = None
+        else: 
+            # Move pointer to previous node
+            self.tail = self.tail.prev
+            # Set next node to none to remove end node
+            self.tail.next = None 
+            # Break off temp pointer
+            temp.prev = None 
+        self.length -= 1
+        return temp 
+
             
 my_doubly_linked_list = DoublyLinkedList(7)
+my_doubly_linked_list.append(8)
+my_doubly_linked_list.pop()
 
 my_doubly_linked_list.print_list()
