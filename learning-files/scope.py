@@ -1,12 +1,3 @@
-enemies = 1
-
-def increase_enemies():
-    enemies = 2
-    print(f'enemies inside function: {enemies}')
-
-increase_enemies()
-print(f'enemies outside function: {enemies}')
-
 # Global Scope 
 # Variable, values, namespace exist and can be used anywhere
 # Scope applies to anything you name (namespace): variables, functions, etc...
@@ -35,3 +26,32 @@ if game_level < 5:
     new_enemy = enemies[0]
 
 print(f'New Enemy: {new_enemy}')
+
+# Modifying Global Scope: 
+enemies = 1
+
+def increase_enemies():
+    # (A1) Use global key word to modify a global variable inside funciton 
+    # global enemies (remove #)
+    # enemies += 1
+    print(f'enemies inside function: {enemies}')
+    # (B1) Return statement is a better way to use global scope in function
+    return enemies +1 
+
+increase_enemies()
+
+
+
+'''If you create a global variable, and then use the same 
+variable inside a local scope, this is actually a completely 
+different varaible. 
+
+Important -- You should not call your local and 
+global variables the same thing! 
+
+To modify a global variable inside of a function, 
+refer to (A1) above. You probably don't want to modify
+global scope inside functions very often. 
+
+Another method to do this is to use the return statement (A2)
+'''
