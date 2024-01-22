@@ -40,8 +40,6 @@ def increase_enemies():
 
 increase_enemies()
 
-
-
 '''If you create a global variable, and then use the same 
 variable inside a local scope, this is actually a completely 
 different varaible. 
@@ -55,3 +53,11 @@ global scope inside functions very often.
 
 Another method to do this is to use the return statement (A2)
 '''
+
+# Global Constants
+# Variables that you never plan on changing (ex: Pi or a Birthday)
+# Naming convention is all uppercase 
+
+CHRISTMAS = 'December 31' 
+PI = 3.14159
+GITHUB = 'luka-danger'
