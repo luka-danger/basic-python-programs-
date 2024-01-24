@@ -36,7 +36,7 @@ def increase_enemies():
     # enemies += 1
     print(f'enemies inside function: {enemies}')
     # (B1) Return statement is a better way to use global scope in function
-    return enemies +1 
+    return enemies +1
 
 increase_enemies()
 
